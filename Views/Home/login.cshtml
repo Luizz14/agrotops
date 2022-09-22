@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "login";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="~/App_Themes/loginStyles.css">
+</head>
+<body>
+    <div class="title">
+        <h1>Agrocoops</h1>
+        <h2>O agronomo produz mais do que grãos, ele produz o futuro.</h2>
+    </div>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Entrar</h1>
+                <span>Entre na sua conta ou crie uma ao lado!</span>
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <button>Entrar</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <h1>Olá! <br> Ainda não possui uma conta? <br> Crie agora! </h1>
+                    <p>Insira seus dados e comece a sua jornada conosco</p>
+                    <button class="ghost" id="signUp">Juntar-se</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <a>Webapp developed by rocket</a>
+    </footer>
+</body>
+</html>

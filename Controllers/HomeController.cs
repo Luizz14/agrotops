@@ -85,8 +85,10 @@ namespace SiteGugu.Controllers
             return View(bd.Pessoa.ToList());
         }
 
+        //metod editar
+
         [HttpGet]
-        public ActionResult Editar(int id)
+        public ActionResult editProduto(int id)
         {
             Produto prod = bd.Produto.ToList().Find(x => x.idproduto == id);
 
@@ -94,16 +96,18 @@ namespace SiteGugu.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(int id, string descricao, decimal valor)
+        public ActionResult editProduto(int id, string descricao, decimal valor)
         {
             Produto prod = bd.Produto.ToList().Find(x => x.idproduto == id);
-            prod.descricaoproduto = descricao;
-            prod.valorunitario = valor;
+            prod.descproduto = descricao;
+            //prod.Estoque = valor;
 
             bd.SaveChanges();
 
             return View("Index", bd.Produto.ToList());
         }
+
+        //excluir prod
 
         [HttpGet]
         public ActionResult Excluir(int id)

@@ -187,6 +187,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\loginStyles.css" />
     <Content Include="App_Themes\cardProdutoCreate.css" />
     <Content Include="App_Themes\home.css" />
     <Content Include="App_Themes\navBar.css" />
@@ -247,6 +248,8 @@
     <Content Include="Views\Home\adicionarProduto.cshtml" />
     <Content Include="Views\Home\entrarCoop.cshtml" />
     <Content Include="Views\Home\editPerfil.cshtml" />
+    <Content Include="Views\Home\editProduto.cshtml" />
+    <Content Include="Views\Home\login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
