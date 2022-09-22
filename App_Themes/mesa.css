@@ -1,0 +1,33 @@
+﻿.cardMesa {
+    margin-top: 30px;
+    margin-left: 40px;
+    background-color: #252D30;
+    width: 230px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.336);
+    display: inline-block;
+    position: relative;
+}
+
+.cardMesa {
+    text-align: center;
+    font-size: 30px;
+    color: #BFC1CF;
+}
+
+#imgLogo {
+    width: 38px;
+}
+
+h2 {
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.336);
+}
+
+a {
+    font-size: 17px;
+    margin: 0px;
+    padding: 0px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.336);
+}

@@ -1,0 +1,157 @@
+﻿/*Conteiner geral*/
+.conteiner {
+    width: 80%;
+    height: 100%;
+    background-color: #a7c957;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0px #a7c957;
+    position: relative;
+    margin: auto;
+    margin-top: 3rem;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/*Alinhar os cards*/
+.produtoAlinhaAIporra {
+    display: inline-block;
+}
+
+/*Notch verde*/
+.card-border-top {
+    width: 25%;
+    height: 15%;
+    background: #6a994e;
+    margin: auto;
+    margin-top: 0px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+
+.btnEntrarCoop {
+    margin: auto;
+    margin-top: 15%;
+    padding: 5px 15px;
+    display: block;
+    border-radius: 15px 15px 0px 0px;
+    border: none;
+    background: #6a994e;
+    color: #f3f3f3;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    transition: background 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.btnCarrinho button:hover {
+    background: #496936;
+    transition: background 0.3s ease-in-out;
+}
+
+#addProduto {
+    display: inline-block;
+    width: 190px;
+    height: 100%;
+    padding: .5em;
+    background: #e9f8e6;
+    position: relative;
+    overflow: visible;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin: 1.5rem;
+    border-radius: 17px;
+    overflow: hidden;
+}
+
+    #addProduto input {
+        display: flex;
+        border-radius: 8px;
+        background-color: #eee;
+        border: 0;
+        padding: 12px 15px;
+        margin-top: 50%;
+        margin: auto;
+        margin-top: 10px;
+        width: 100px;
+        height: 20px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+.btnAdicionar {
+    display: block;
+    margin: auto;
+    padding: 45px 30px;
+    border-radius: 100%;
+    border: none;
+    background: #6a994e;
+    color: #f3f3f3;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.205);
+    cursor: pointer;
+}
+
+/*Card para produtos*/
+.cardProduto {
+    display: inline-block;
+    width: 190px;
+    height: 230px;
+    padding: .5em;
+    background: #e9f8e6;
+    position: relative;
+    overflow: visible;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin: 1.5rem;
+    border-radius: 17px;
+    overflow: hidden;
+}
+
+.cardProduto-img {
+    display: flex;
+    background-color: #7fdd77;
+    height: 40%;
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.cardProduto-info {
+    display: flex;
+    padding-top: 10%;
+}
+
+.cardProduto-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+/*Text*/
+.text-title {
+    font-weight: 900;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.text-body {
+    font-size: .9em;
+    padding-bottom: 10px;
+}
+
+/*Button*/
+.card-button {
+    background-color: #6a994e;
+    color: #f3f3f3;
+    margin: auto;
+    border: none;
+    display: flex;
+    padding: 0.6em;
+    cursor: pointer;
+    border-radius: 18px 18px 0px 0px;
+    transition: .3s ease-in-out;
+}

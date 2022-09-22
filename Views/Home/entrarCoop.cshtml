@@ -1,0 +1,54 @@
+﻿@model IEnumerable <SiteGugu.Models.Cooperativa>
+
+@{
+    ViewBag.Title = "entrarCoop";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="~/App_Themes/home.css">
+    <link rel="stylesheet" href="~/App_Themes/navBar.css">
+    <link rel="stylesheet" href="~/App_Themes/homeProdutor.css">
+
+    <script src="~/Scripts/redirecionamento.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <ul class="menu-items">
+                <li><a href="#home">Cooperativa</a></li>
+                <li><a href="/html/home.html">Cliente</a></li>
+                <li><a href="~/home/homeProdutor">Produtor</a></li>
+                <li><a href="~/home/editPerfil">Perfil</a></li>
+                <li><a href="~/Home/entrarCoop">Cooperativas</a></li>
+            </ul>
+            <h1 class="logo">AgroTops</h1>
+        </div>
+    </nav>
+
+    <div class="pai">
+        <div class="conteiner">
+            <div class="card-border-top">
+                <a class="subTitulo">Cooperativas</a>
+            </div>
+
+            <!--Div para alinhar na horizontal os cards-->
+                    <div id="addProduto">
+                        <div class="cardProduto-info">
+                            <p class="text-title">item.nomeFic</p>
+                        </div>
+                        <div class="cardProduto-footer">
+                            <span class="text-title">Coop: </span>
+                        </div>
+                        <button onclick="" class="card-button">Entrar</button>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

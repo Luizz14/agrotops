@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SiteGugu.Models.Pessoa>
+
+@{
+    ViewBag.Title = "editPerfil";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="~/App_Themes/home.css">
+    <link rel="stylesheet" href="~/App_Themes/navBar.css">
+    <link rel="stylesheet" href="~/App_Themes/cardPerfil.css">
+    <script src="~/Scripts/inputPerfil.js"></script>
+</head>
+<body onload="retorno()">
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <ul class="menu-items">
+                <li><a href="#home">--</a></li>
+                <li><a href="#">--</a></li>
+                <li><a href="#food">--</a></li>
+            </ul>
+            <h1 class="logo">AgroTops</h1>
+        </div>
+    </nav>
+
+    <div class="pai">
+        <div class="card">
+            <div class="card-border-top">
+                <a class="subTitulo">Perfil</a>
+            </div>
+            <div id="texto" class="img">
+            </div>
+            <span>Carlos</span>
+            <p class="job">Produtor</p>
+            <p class="jobCoop">AgroTech</p>
+
+            @foreach (var item in Model)
+            {
+                <input id="nomeTxt" name="nome" type="text" placeholder="nome" value="@item.nome">
+                <input id="nomeFantTxt" name="nomefant" type="text" placeholder="nome fantasia" value="">
+                <input id="emailTxt" name="email" type="text" placeholder="email" value="@item.email">
+                <input id="telefoneTxt" name="telefone" type="text" placeholder="telefone" value="@item.telefone">
+                <input id="cpfTxt" name="cpf" type="text" placeholder="cpf" value="">
+                <input id="carteiraProdTxt" name="carteira" type="text" placeholder="carteira Produtor" value="">
+                <input id="cnpjCoopTxt" name="cnpjCoop" type="text" placeholder="cnpjC" value="">
+                <input id="cnpjJurTxt" name="cnpjJur" type="text" placeholder="cnpjJ" value="">
+                <button class="btnPerfil" onclick="pagAnterior()">Confirmar</button>
+            }
+
+        </div>
+    </div>
+</body>
+</html>

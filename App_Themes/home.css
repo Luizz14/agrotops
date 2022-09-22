@@ -1,0 +1,16 @@
+﻿body {
+    background: #f2e8cf;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.subTitulo {
+    font-weight: 400;
+    color: #386641;
+    display: block;
+    text-align: center;
+    padding-top: 3px;
+    font-size: 18px;
+}

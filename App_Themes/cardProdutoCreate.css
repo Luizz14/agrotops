@@ -1,0 +1,93 @@
+﻿.card {
+    margin: auto;
+    margin-top: 5%;
+    position: relative;
+    width: 430px;
+    min-height: 454px;
+    max-height: 854px;
+    background: #386641;
+    border-radius: 15px;
+    box-shadow: 1px 5px 60px 0px #38664160;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+input {
+    border-radius: 8px;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: auto;
+    margin-top: 10px;
+    width: 60%;
+}
+
+
+.card .card-border-top {
+    width: 60%;
+    height: 7%;
+    background: #6a994e;
+    margin: auto;
+    margin-top: 0px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.card span {
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    font-size: 26px;
+}
+
+.card .jobCoop {
+    font-weight: 400;
+    color: #a7c957;
+    display: block;
+    text-align: center;
+    padding-top: 3px;
+    font-size: 18px;
+}
+
+.card .job {
+    color: #6a994e;
+    font-size: 22px;
+    text-align: center;
+}
+
+.card .img {
+    width: 100px;
+    height: 100px;
+    background: #bc4749;
+    border-radius: 100%;
+    margin: auto;
+    margin-top: 25px;
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 8px 25px;
+    display: flex;
+    border-radius: 18px 18px 0px 0px;
+    border: none;
+    background: #6a994e;
+    color: white;
+    font-weight: 600;
+    transition: background 0.3s ease-in-out;
+}
+
+    .card button:hover {
+        background: #496936;
+        transition: background 0.3s ease-in-out;
+    }
+
+.btnPerfil {
+    border-radius: 8px 8px 0px 0px;
+    margin: auto;
+    bottom: 0;
+}
