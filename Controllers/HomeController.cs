@@ -32,10 +32,15 @@ namespace SiteGugu.Controllers
             }
             else
             {
-                Session["sessaopessoa"] = "logado";
-                if (var.tipopessoa == "f")
+                if (var.tipopessoa == "p")
                 {
                     return View("homeProdutor", bd.Produto.ToList());
+                }
+                if ( var.tipopessoa == "f"){
+                    return View("homeCliente", bd.Produto.ToList());
+                }
+                if (var.tipopessoa == "c"){
+                    return View("homeCoop");
                 }
                 else
                 {
