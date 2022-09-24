@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdagrotopsModelStoreContainer" CdmEntityContainer="bdagrotopsEntities">
+    <EntitySetMapping Name="Cooperativa">
+      <EntityTypeMapping TypeName="bdagrotopsModel.Cooperativa">
+        <MappingFragment StoreEntitySet="Cooperativa">
+          <ScalarProperty Name="idcooperativa" ColumnName="idcooperativa" />
+          <ScalarProperty Name="nomecoop" ColumnName="nomecoop" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="cnpjcoop" ColumnName="cnpjcoop" />
+          <ScalarProperty Name="cidade" ColumnName="cidade" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="regiao" ColumnName="regiao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entrada">
+      <EntityTypeMapping TypeName="bdagrotopsModel.Entrada">
+        <MappingFragment StoreEntitySet="Entrada">
+          <ScalarProperty Name="identrada" ColumnName="identrada" />
+          <ScalarProperty Name="idpessoa" ColumnName="idpessoa" />
+          <ScalarProperty Name="idcooperativa" ColumnName="idcooperativa" />
+          <ScalarProperty Name="idproduto" ColumnName="idproduto" />
+          <ScalarProperty Name="quantentrada" ColumnName="quantentrada" />
+          <ScalarProperty Name="dataentrada" ColumnName="dataentrada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estoque">
+      <EntityTypeMapping TypeName="bdagrotopsModel.Estoque">
+        <MappingFragment StoreEntitySet="Estoque">
+          <ScalarProperty Name="idproduto" ColumnName="idproduto" />
+          <ScalarProperty Name="quantestoque" ColumnName="quantestoque" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pedido">
+      <EntityTypeMapping TypeName="bdagrotopsModel.Pedido">
+        <MappingFragment StoreEntitySet="Pedido">
+          <ScalarProperty Name="idpedido" ColumnName="idpedido" />
+          <ScalarProperty Name="idPessoa" ColumnName="idPessoa" />
+          <ScalarProperty Name="datapedido" ColumnName="datapedido" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PedidoEstoque">
+      <EntityTypeMapping TypeName="bdagrotopsModel.PedidoEstoque">
+        <MappingFragment StoreEntitySet="PedidoEstoque">
+          <ScalarProperty Name="idpedido" ColumnName="idpedido" />
+          <ScalarProperty Name="idPessoa" ColumnName="idPessoa" />
+          <ScalarProperty Name="idproduto" ColumnName="idproduto" />
+          <ScalarProperty Name="idcooperativa" ColumnName="idcooperativa" />
+          <ScalarProperty Name="quantidade" ColumnName="quantidade" />
+          <ScalarProperty Name="observproduto" ColumnName="observproduto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pessoa">
+      <EntityTypeMapping TypeName="bdagrotopsModel.Pessoa">
+        <MappingFragment StoreEntitySet="Pessoa">
+          <ScalarProperty Name="idpessoa" ColumnName="idpessoa" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="tipopessoa" ColumnName="tipopessoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaFisica">
+      <EntityTypeMapping TypeName="bdagrotopsModel.PessoaFisica">
+        <MappingFragment StoreEntitySet="PessoaFisica">
+          <ScalarProperty Name="idpessoa" ColumnName="idpessoa" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="datanasc" ColumnName="datanasc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaJuridica">
+      <EntityTypeMapping TypeName="bdagrotopsModel.PessoaJuridica">
+        <MappingFragment StoreEntitySet="PessoaJuridica">
+          <ScalarProperty Name="idpessoa" ColumnName="idpessoa" />
+          <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+          <ScalarProperty Name="nomefant" ColumnName="nomefant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produto">
+      <EntityTypeMapping TypeName="bdagrotopsModel.Produto">
+        <MappingFragment StoreEntitySet="Produto">
+          <ScalarProperty Name="idproduto" ColumnName="idproduto" />
+          <ScalarProperty Name="descproduto" ColumnName="descproduto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produtor">
+      <EntityTypeMapping TypeName="bdagrotopsModel.Produtor">
+        <MappingFragment StoreEntitySet="Produtor">
+          <ScalarProperty Name="idpessoa" ColumnName="idpessoa" />
+          <ScalarProperty Name="carteiraprod" ColumnName="carteiraprod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProdutorCooperativa">
+      <EntityTypeMapping TypeName="bdagrotopsModel.ProdutorCooperativa">
+        <MappingFragment StoreEntitySet="ProdutorCooperativa">
+          <ScalarProperty Name="idpessoa" ColumnName="idpessoa" />
+          <ScalarProperty Name="idcooperativa" ColumnName="idcooperativa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ValorUnitario">
+      <EntityTypeMapping TypeName="bdagrotopsModel.ValorUnitario">
+        <MappingFragment StoreEntitySet="ValorUnitario">
+          <ScalarProperty Name="idvalorunit" ColumnName="idvalorunit" />
+          <ScalarProperty Name="idproduto" ColumnName="idproduto" />
+          <ScalarProperty Name="idcooperativa" ColumnName="idcooperativa" />
+          <ScalarProperty Name="datavalorunit" ColumnName="datavalorunit" />
+          <ScalarProperty Name="valorentrada" ColumnName="valorentrada" />
+          <ScalarProperty Name="valorsaida" ColumnName="valorsaida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

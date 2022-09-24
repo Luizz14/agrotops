@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "cadastrar";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CadastroFisica</title>
+    <link rel="stylesheet" href="~/App_Themes/cadastro.css">
+    <script src="~/Scripts/redirecionamento.js"></script>
+</head>
+<body>
+    <div class="title">
+        <h1>Agrocoops</h1>
+        <h2>O agronomo produz mais do que grãos, ele produz o futuro.</h2>
+    </div>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <h1>Deseja cadastrar-se como:</h1>
+            <div class="btnAtalho">
+                <button id="btnPessoaFisica" class="btnRedirecionar" onclick="cadastroPessoaFisica()">Pessoa Fisica</button>
+                <button id="btnPessoaFisica" class="btnRedirecionar" onclick="cadastroProdutor()">Produtor</button>
+                <button id="btnPessoaFisica" class="btnRedirecionar" onclick="cadastroPessoaJuridica()">Pessoa Jurídica</button>
+                <button id="empresa" class="btnRedirecionar" onclick="cadastroCoorporativa()">Cooperativa</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <a>Webapp developed by rocket</a>
+    </footer>
+</body>
+</html>

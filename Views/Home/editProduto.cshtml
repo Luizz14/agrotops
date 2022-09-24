@@ -1,5 +1,4 @@
-﻿@model IEnumerable<SiteGugu.Models.Produto>
-
+﻿@model SiteGugu.Models.Produto
 @{
     ViewBag.Title = "editProduto";
 }
@@ -39,19 +38,12 @@
             <span>Carlos</span>
             <p class="job">Produtor</p>
             <p class="jobCoop">AgroTech</p>
-
-            @foreach (var item in Model)
-            {
-                <input id="nomeTxt" name="nome" type="text" placeholder="nome" value="@item.nome">
-                <input id="nomeFantTxt" name="nomefant" type="text" placeholder="nome fantasia" value="">
-                <input id="emailTxt" name="email" type="text" placeholder="email" value="@item.email">
-                <input id="telefoneTxt" name="telefone" type="text" placeholder="telefone" value="@item.telefone">
-                <input id="cpfTxt" name="cpf" type="text" placeholder="cpf" value="">
-                <input id="carteiraProdTxt" name="carteira" type="text" placeholder="carteira Produtor" value="">
-                <input id="cnpjCoopTxt" name="cnpjCoop" type="text" placeholder="cnpjC" value="">
-                <input id="cnpjJurTxt" name="cnpjJur" type="text" placeholder="cnpjJ" value="">
-                <button class="btnPerfil" onclick="pagAnterior()">Confirmar</button>
-            }
+            
+            <form method="post">
+                <input id="descricao" name="descricao" type="text" placeholder="descricao " value="@Model.descproduto">
+                <button type="submit" class="btnPerfil" onclick="editPerfil()">Confirmar</button>
+            </form>
+                
 
         </div>
     </div>

@@ -12,28 +12,56 @@ namespace SiteGugu.Controllers
         //Conexao com o banco
         private bdagrotopsEntities bd = new bdagrotopsEntities();
 
+        [HttpGet]
         public ActionResult login()
         {
             return View();
         }
 
-        /*Pagina inicial listar pessoa e veiculos Get:
-        public ActionResult caixa()
+        [HttpPost]
+        public ActionResult login(string email, string senha)
         {
-            //return View(bd.mesa.ToList());
+            Pessoa var = bd.Pessoa.ToList().Find(x => x.email == email);
+            
+
+            if(var == null) 
+            {
+                @ViewBag.Title = "login invalido";
+                return View("login");
+
+            }
+            else
+            {
+                Session["sessaopessoa"] = "logado";
+                if (var.tipopessoa == "f")
+                {
+                    return View("homeProdutor", bd.Produto.ToList());
+                }
+                else
+                {
+                    return View("login");
+                }
+            }
+            
+           
         }
 
-        //Cadastrar Pessoas /View Get
-        [HttpGet]
-        public ActionResult Cadastrar()
+        public ActionResult cadastro()
         {
             return View();
         }
-         */
+
 
         //Cadastrar Pessoas Post
+        [HttpGet]
+        public ActionResult cadastrarFisica()
+        {
+            return View();
+        }
+        
         [HttpPost]
-        public ActionResult login(string nome, int telefone, string email, string senha, string tipoPessoa)
+        public ActionResult cadastrarFisica(string nome, int telefone, string email, string senha, 
+            string tipoPessoa, long cpf, DateTime datanasc, string sexo)
         {
 
             Pessoa p = new Pessoa();
@@ -43,10 +71,20 @@ namespace SiteGugu.Controllers
             p.senha = senha;
             p.tipopessoa = tipoPessoa;
 
+            p.tipopessoa = "f";
+
             bd.Pessoa.Add(p);
 
+            PessoaFisica pf = new PessoaFisica();
+            pf.cpf = cpf;
+            pf.datanasc = (DateTime)datanasc;
+            pf.sexo = sexo;
 
-            return View("homeProdutor");
+            bd.PessoaFisica.Add(pf);
+            bd.SaveChanges();
+
+
+            return View("homeProdutor", bd.Produto.ToList());
         }
 
         [HttpGet]
@@ -96,7 +134,7 @@ namespace SiteGugu.Controllers
         }
 
         [HttpPost]
-        public ActionResult editProduto(int id, string descricao, decimal valor)
+        public ActionResult editProduto(int id, string descricao)
         {
             Produto prod = bd.Produto.ToList().Find(x => x.idproduto == id);
             prod.descproduto = descricao;
@@ -104,7 +142,7 @@ namespace SiteGugu.Controllers
 
             bd.SaveChanges();
 
-            return View("Index", bd.Produto.ToList());
+            return View("homeProdutor", bd.Produto.ToList());
         }
 
         //excluir prod

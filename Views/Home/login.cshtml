@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
     <link rel="stylesheet" href="~/App_Themes/loginStyles.css">
+    <script src="~/Scripts/redirecionamento.js"></script>
 </head>
 <body>
     <div class="title">
@@ -18,12 +19,13 @@
     </div>
     <div class="container" id="container">
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form method="post" action="/Home/login">
                 <h1>Entrar</h1>
                 <span>Entre na sua conta ou crie uma ao lado!</span>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <button>Entrar</button>
+                <input name="email" type="email" placeholder="Email" />
+                <input name="senha" type="password" placeholder="Password" />
+                <button type="submit">Entrar</button>
+                @ViewBag.Title
             </form>
         </div>
         <div class="overlay-container">
@@ -31,7 +33,7 @@
                 <div class="overlay-panel overlay-right">
                     <h1>Olá! <br> Ainda não possui uma conta? <br> Crie agora! </h1>
                     <p>Insira seus dados e comece a sua jornada conosco</p>
-                    <button class="ghost" id="signUp">Juntar-se</button>
+                    <button onclick="cadastro()" class="ghost" id="signUp">Juntar-se</button>
                 </div>
             </div>
         </div>

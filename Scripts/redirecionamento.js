@@ -1,12 +1,16 @@
-﻿function pessoaFisica() {
-    window.location.replace('/View/cadastroPessoaFisica.cshtml')
+﻿function cadastroPessoaFisica() {
+    window.location.replace('/home/cadastrarFisica')
 }
 
-function pessoaJuridica() {
+function cadastroProdutor() {
+    window.location.replace('/Home/cadastrarProdutor')
+}
+
+function cadastroPessoaJuridica() {
     window.location.replace('/View/cadastroPessoaJuridica.cshtml')
 }
 
-function coorporativa() {
+function cadastroCoorporativa() {
     window.location.replace('/View/cadastroCoorporativa.cshtml')
 }
 
@@ -18,10 +22,14 @@ function adicionarProduto() {
     window.location.replace('/Home/adicionarProduto')
 }
 
-function editarProduto() {
-    window.location.replace('/View/editarProduto.cshtml')
+function editPerfil() {
+    window.location.replace('/Home/editarProduto')
 }
 
 function homeProdutor() {
     window.location.replace('/Home/homeProdutor')
+}
+
+function cadastro() {
+    window.location.replace('/Home/cadastro')
 }
