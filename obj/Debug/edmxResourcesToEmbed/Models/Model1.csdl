@@ -321,7 +321,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="bdagrotopsEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="bdagrotopsEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Cooperativa" EntityType="Self.Cooperativa" />
     <EntitySet Name="Entrada" EntityType="Self.Entrada" />
     <EntitySet Name="Estoque" EntityType="Self.Estoque" />

@@ -13,10 +13,10 @@ namespace SiteGugu.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class bdagrotopsEntities : DbContext
+    public partial class bdagrotopsEntities1 : DbContext
     {
-        public bdagrotopsEntities()
-            : base("name=bdagrotopsEntities")
+        public bdagrotopsEntities1()
+            : base("name=bdagrotopsEntities1")
         {
         }
     

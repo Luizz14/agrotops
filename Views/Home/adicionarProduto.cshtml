@@ -1,4 +1,4 @@
-﻿@model SiteGugu.Models.Produto
+﻿//model SiteGugu.Models.Produto
     
 @{
     ViewBag.Title = "adicionarProduto";
@@ -32,7 +32,7 @@
     </nav>
 
     <div class="pai">
-        <form class="card" method="post">
+        <form class="card" method="post" action="/home/adicionarProduto">
             <div class="card-border-top">
                 <a class="subTitulo">Produto</a>
             </div>
@@ -41,11 +41,12 @@
             <span>Nome Produto</span>
             <p class="job">Nome Produtor</p>
 
-            <input id="descproduto" name="descproduto" type="text" placeholder="descproduto" value="">
-            <input id="valorTxt" type="text" placeholder="valor" value="">
-            <input id="estoqueTxt" type="text" placeholder="estoque" value="">
+            <input id="descproduto" name="descproduto" type="text" placeholder="descproduto">
+            <input id="quantestoque" name="quantestoque" type="number" placeholder="estoque">
+            <input id="valorentrada" name="valorentrada" type="number" placeholder="valor">
+            <input id="valorsaida" name="valorsaida" type="number" placeholder="valorsaida">
             <button type="submit" class="btnPerfil" onclick="homeProdutor()">Confirmar</button>
-            <a class="btnPerfil" onclick="homeProdutor()">Voltar</a>
+            <a onclick="homeProdutor()"><button type="button" class="btnPerfil">Voltar</button></a>
         </form>
     </div>
 </body>

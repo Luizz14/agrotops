@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Mvc.Routing.Constraints;
 
 namespace SiteGugu.Controllers
 {
     public class HomeController : Controller
     {
         //Conexao com o banco
-        private bdagrotopsEntities bd = new bdagrotopsEntities();
+        private bdagrotopsEntities1 bd = new bdagrotopsEntities1();
 
         [HttpGet]
         public ActionResult login()
@@ -26,7 +27,7 @@ namespace SiteGugu.Controllers
 
             if(var == null) 
             {
-                @ViewBag.Title = "login invalido";
+                @ViewBag.Menssage = "login invalido";
                 return View("login");
 
             }
@@ -36,10 +37,12 @@ namespace SiteGugu.Controllers
                 {
                     return View("homeProdutor", bd.Produto.ToList());
                 }
-                if ( var.tipopessoa == "f"){
+                if ( var.tipopessoa == "f")
+                {
                     return View("homeCliente", bd.Produto.ToList());
                 }
-                if (var.tipopessoa == "c"){
+                if (var.tipopessoa == "c")
+                {
                     return View("homeCoop");
                 }
                 else
@@ -48,7 +51,6 @@ namespace SiteGugu.Controllers
                 }
             }
             
-           
         }
 
         public ActionResult cadastro()
@@ -57,7 +59,7 @@ namespace SiteGugu.Controllers
         }
 
 
-        //Cadastrar Pessoas Post
+        //Cadastrar Pessoas Fisicas Post
         [HttpGet]
         public ActionResult cadastrarFisica()
         {
@@ -65,17 +67,14 @@ namespace SiteGugu.Controllers
         }
         
         [HttpPost]
-        public ActionResult cadastrarFisica(string nome, int telefone, string email, string senha, 
-            string tipoPessoa, long cpf, DateTime datanasc, string sexo)
+        public ActionResult cadastrarFisica(string nome, int telefone, string email, string senha, long cpf, DateTime datanasc, string sexo)
         {
 
             Pessoa p = new Pessoa();
             p.nome = nome;
-            p.telefone = Convert.ToInt32(telefone);
+            p.telefone = telefone;
             p.email = email;
             p.senha = senha;
-            p.tipopessoa = tipoPessoa;
-
             p.tipopessoa = "f";
 
             bd.Pessoa.Add(p);
@@ -89,13 +88,116 @@ namespace SiteGugu.Controllers
             bd.SaveChanges();
 
 
-            return View("homeProdutor", bd.Produto.ToList());
+            return View("login");
         }
+
+        //Cadastrar Produtor Post
+        [HttpGet]
+        public ActionResult cadastrarProdutor()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult cadastrarProdutor(string nome, int telefone, string email, string senha, long cpf, DateTime datanasc, string sexo, int carteiraprod)
+        {
+
+            Pessoa p = new Pessoa();
+            p.nome = nome;
+            p.telefone = telefone;
+            p.email = email;
+            p.senha = senha;
+            p.tipopessoa = "p";
+
+            bd.Pessoa.Add(p);
+
+            PessoaFisica pf = new PessoaFisica();
+            pf.cpf = cpf;
+            pf.datanasc = (DateTime)datanasc;
+            pf.sexo = sexo;
+
+            bd.PessoaFisica.Add(pf);
+
+            Produtor prod = new Produtor();
+            prod.carteiraprod = carteiraprod;
+
+            bd.Produtor.Add(prod);
+
+            bd.SaveChanges();
+
+
+            return View("login");
+        }
+
+
+        //Cadastrar Coop Post
+        [HttpGet]
+        public ActionResult cadastrarCoop()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult cadastrarCoop(string nomecoop, int telefone, string email, long cnpjcoop, string cidade, string estado, string regiao)
+        {
+
+            Cooperativa coop = new Cooperativa();
+            coop.nomecoop = nomecoop;
+            coop.telefone = telefone;
+            coop.email = email;
+            coop.cnpjcoop = cnpjcoop;
+            coop.cidade = cidade;
+            coop.estado = estado;
+            coop.regiao = regiao;
+
+            bd.Cooperativa.Add(coop);
+
+            bd.SaveChanges();
+
+            return View("login");
+        }
+
+        //Cadastrar pessoa juridica
+        [HttpGet]
+        public ActionResult cadastrarJuridica()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult cadastrarJuridica(string nome, string nomefant, int telefone, string email, string senha, long cnpj)
+        {
+            Pessoa p = new Pessoa();
+            p.nome = nome;
+            p.telefone = telefone;
+            p.email = email;
+            p.senha = senha;
+            p.tipopessoa = "j";
+
+            bd.Pessoa.Add(p);
+
+            PessoaJuridica pj = new PessoaJuridica();
+            pj.cnpj = cnpj;
+            pj.nomefant = nomefant;
+
+            bd.PessoaJuridica.Add(pj);
+
+            bd.SaveChanges();
+
+            return View("login");
+        }
+
+        //pagina produtor
 
         [HttpGet]
         public ActionResult homeProdutor()
         {
-            return View(bd.Produto.ToList());
+            var estoque = from e in bd.Estoque select e;
+            ViewBag.Estoque = estoque;
+            var produto = from p in bd.Produto select p;
+            ViewBag.Produto = produto;
+
+            return View(bd.Estoque.ToList());
+            
         }
 
         [HttpGet]
@@ -103,14 +205,32 @@ namespace SiteGugu.Controllers
         {
             return View();
         }
-
+        //pagina add produto
         [HttpPost]
-        public ActionResult adicionarProduto(string descproduto)
+        public ActionResult adicionarProduto(string descproduto, int quantestoque, decimal valorentrada, decimal valorsaida)
         {
+
             Produto p = new Produto();
             p.descproduto = descproduto;
 
             bd.Produto.Add(p);
+
+            Estoque e = new Estoque();
+            e.quantestoque = quantestoque;
+
+            bd.Estoque.Add(e);
+
+            ValorUnitario vu = new ValorUnitario();
+            
+            DateTime datavalorunit = DateTime.Now;
+            
+            vu.datavalorunit = (DateTime)datavalorunit;
+            vu.valorentrada =  valorentrada;
+            vu.valorsaida = valorsaida;
+            vu.idcooperativa = 1;
+
+            bd.ValorUnitario.Add(vu);
+
             bd.SaveChanges();
 
             return View();
@@ -142,12 +262,13 @@ namespace SiteGugu.Controllers
         public ActionResult editProduto(int id, string descricao)
         {
             Produto prod = bd.Produto.ToList().Find(x => x.idproduto == id);
-            prod.descproduto = descricao;
-            //prod.Estoque = valor;
 
+            Estoque e = new Estoque();
+            prod.descproduto = descricao;
+            
             bd.SaveChanges();
 
-            return View("homeProdutor", bd.Produto.ToList());
+            return View("homeProdutor", bd.Estoque.ToList());
         }
 
         //excluir prod
@@ -162,6 +283,11 @@ namespace SiteGugu.Controllers
 
             return View("Index", bd.Produto.ToList());
 
+        }
+
+        public ActionResult homeCoop()
+        {
+            return View(bd.ValorUnitario.ToList());
         }
     }
 }

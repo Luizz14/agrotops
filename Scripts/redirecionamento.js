@@ -7,15 +7,15 @@ function cadastroProdutor() {
 }
 
 function cadastroPessoaJuridica() {
-    window.location.replace('/View/cadastroPessoaJuridica.cshtml')
+    window.location.replace('/home/cadastrarJuridica')
 }
 
-function cadastroCoorporativa() {
-    window.location.replace('/View/cadastroCoorporativa.cshtml')
+function cadastroCoop() {
+    window.location.replace('/home/cadastrarCoop')
 }
 
 function editarPerfil() {
-    window.location.replace('/View/editPerfil.cshtml')
+    window.location.replace('/home/editPerfil')
 }
 
 function adicionarProduto() {

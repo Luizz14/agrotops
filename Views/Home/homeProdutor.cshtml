@@ -1,6 +1,4 @@
-﻿@model IEnumerable <SiteGugu.Models.Produto>
-
-@{
+﻿@{
     ViewBag.Title = "homeProdutor";
 }
 <!DOCTYPE html>
@@ -41,22 +39,24 @@
                 <div id="addProduto">
                     <div class="card-border-bottom">
                         <button onclick="adicionarProduto()" class="btnAdicionar">Adicionar <br> Produto</button>
+                        <a><!--Html.DisplayNameFor(model => model.Estoque.quantestoque)--></a>
                     </div>
                 </div>
 
-                @foreach (var item in Model)
+                @foreach (var item in SiteGugu.Models.Estoque
                 {
                     <div id="addProduto">
                         <div class="cardProduto-info">
                             <p class="text-title">@item.descproduto</p>
                         </div>
                         <div class="cardProduto-footer">
-                            <span class="text-title">R$<br> Estoque: <br> Coop: </span>
+                            <span class="text-title">R$<br> Estoque: @item.quantestoque <br> Coop: </span>
                         </div>
                         <a href="/home/editProduto?id=@item.idproduto"><button class="card-button">Editar</button></a>
-                        
                     </div>
                 }
+
+
 
 
             </div>

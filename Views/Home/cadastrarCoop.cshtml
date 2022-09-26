@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "cadastrarCoop";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CadastroFisica</title>
+    <link rel="stylesheet" href="~/App_Themes/cadastro.css">
+    <script src="/js/redirecionamento.js"></script>
+</head>
+<body>
+    <div class="title">
+        <h1>Agrocoops</h1>
+        <h2>O agronomo produz mais do que grãos, ele produz o futuro.</h2>
+    </div>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <form method="post">
+                <h1>Cadastrar-se</h1>
+                <input name="nomecoop" type="text" placeholder="Nome">
+                <input name="telefone" type="number" placeholder="Telefone">
+                <input name="email" type="email" placeholder="Email">
+                <input name="cnpjcoop" type="number" placeholder="cnpj">
+                <input name="cidade" type="text" placeholder="cidade">
+                <input name="estado" type="text" placeholder="estado">
+                <input name="regiao" type="text" placeholder="regiao">
+
+                <button type="submit">Finalizar</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <a>Webapp developed by rocket</a>
+    </footer>
+</body>
+</html>

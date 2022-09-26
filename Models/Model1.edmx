@@ -694,7 +694,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="bdagrotopsEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="bdagrotopsEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Cooperativa" EntityType="Self.Cooperativa" />
           <EntitySet Name="Entrada" EntityType="Self.Entrada" />
           <EntitySet Name="Estoque" EntityType="Self.Estoque" />
@@ -769,7 +769,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="bdagrotopsModelStoreContainer" CdmEntityContainer="bdagrotopsEntities">
+        <EntityContainerMapping StorageEntityContainer="bdagrotopsModelStoreContainer" CdmEntityContainer="bdagrotopsEntities1">
           <EntitySetMapping Name="Cooperativa">
             <EntityTypeMapping TypeName="bdagrotopsModel.Cooperativa">
               <MappingFragment StoreEntitySet="Cooperativa">
